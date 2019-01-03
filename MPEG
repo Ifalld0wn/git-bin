@@ -1,0 +1,21 @@
+video_configs = list()
+ 
+video_configs.append(bitcodin.VideoStreamConfig(
+    default_stream_id=0,
+    bitrate=1024000,
+    profile='Main',
+    preset='standard',
+    height=768,
+    width=1024,
+    codec='hevc'
+))
+ 
+audio_configs = [bitcodin.AudioStreamConfig(default_stream_id=0, 
+                                            bitrate=192000)]
+ 
+encoding_profile_obj = bitcodin.EncodingProfile('HEVC Encoding Profile', 
+                                                 video_configs, 
+                                                 audio_configs)
+ 
+encoding_profile = 
+bitcodin.create_encoding_profile(encoding_profile_obj)
